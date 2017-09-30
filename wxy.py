@@ -6,7 +6,7 @@ os.environ["webdriver.ie.driver"] = chromedriver
 
 browser = webdriver.Ie(chromedriver)
 
-browser.get("https://ilanni.com")
+browser.get("https://baidu.com")
 browser.find_element_by_id("kw").send_keys("selenium")
 browser.find_element_by_id("su").click()
 browser.quit()
