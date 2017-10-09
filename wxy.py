@@ -1,13 +1,42 @@
-#coding=utf-8
-from selenium import webdriver
-import os
+# coding=utf-8
+# '''刷百度关键词点击开始'''
+import sys
 
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
+from selenium import webdriver
+# from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.proxy import *
+import time, re
+
+# '''可以改成别的浏览器'''
 chromedriver = r"E:\software\chromedriver_win32\chromedriver.exe"
-driver = webdriver.Chrome(chromedriver)
-driver.get("http://www.baidu.com")
-print driver.title, driver.current_url
-# 百度首页搜索输入框的元素id='kw'，搜索按钮的元素id='su'，注意搜索中包含中文使用u
-driver.find_element_by_id('kw').send_keys(u'jira破解')
-driver.find_element_by_id('su').click()
-print driver.title, driver.current_url
-#driver.close()
+browser = webdriver.Chrome(chromedriver)
+
+
+
+browser.get("http://www.baidu.com")
+# '''启动浏览器后进入第一网页'''
+browser.find_element_by_id("kw").send_keys(u"jira破解")
+# '''输入关键词'''
+time.sleep(3)
+# '''超时设置，如果超过指定时间，则抛出异常'''
+browser.implicitly_wait(10)
+
+# '''通过键盘回车来代替搜素按钮的点击操作'''
+browser.find_element_by_id("su").send_keys(Keys.ENTER)
+
+line_list = browser.find_elements_by_xpath("//h3[@class='t']")
+# '''xpath提取特征'''
+for line in line_list:
+    t = line.find_element_by_xpath("a")
+    print '%s - %s' % (t.text, type(t.text))
+    if u'烂泥行天下' in t.text:
+        print 'yes'
+        t.click()
+        time.sleep(60)
+
+#关闭浏览器使用
+#browser.quit()
