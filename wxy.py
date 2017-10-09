@@ -10,6 +10,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 # from selenium.webdriver.common.proxy import *
 import time, re
+#time模块是为了实现等待页面加载。
 
 # '''可以改成别的浏览器'''
 chromedriver = r"E:\software\chromedriver_win32\chromedriver.exe"
