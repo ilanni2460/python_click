@@ -13,8 +13,8 @@ driver.find_element_by_id('lb').click()
 # driver.find_element_by_id('TANGRAM__PSP_10__unameLoginLink').click()
 time.sleep(3)
 
-driver.find_element_by_name('userName').send_keys('username')
-driver.find_element_by_name('password').send_keys('passwd')
+driver.find_element_by_name('userName').send_keys('lanni654321')
+driver.find_element_by_name('password').send_keys('wxy123456')
 driver.find_element_by_id('TANGRAM__PSP_10__submit').click()
 
 try:
