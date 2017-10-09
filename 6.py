@@ -1,4 +1,5 @@
 # encoding=utf
+# coding=utf-8
 # '''刷百度关键词点击开始'''
 import sys
 
@@ -35,5 +36,5 @@ for line in line_list:
     if u'烂泥行天下' in t.text:
         print 'yes'
         t.click()
-        time.sleep(20)
-browser.quit()
+        time.sleep(5)
+#browser.quit()
