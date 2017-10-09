@@ -18,7 +18,7 @@ browser = webdriver.Chrome(chromedriver)
 # '''可以改成别的浏览器'''
 browser.get("http://www.baidu.com")
 # '''启动浏览器后进入第一网页'''
-browser.find_element_by_id("kw").send_keys(u"jira破解")
+browser.find_element_by_id("kw").send_keys(u"confluence wiki 迁移")
 # '''输入关键词'''
 
 # '''超时设置，如果超过指定时间，则抛出异常'''
@@ -35,5 +35,5 @@ for line in line_list:
     if u'烂泥行天下' in t.text:
         print 'yes'
         t.click()
-        time.sleep(10)
+        time.sleep(20)
 browser.quit()
