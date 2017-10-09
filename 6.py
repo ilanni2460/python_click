@@ -32,7 +32,7 @@ line_list = browser.find_elements_by_xpath("//h3[@class='t']")
 for line in line_list:
     t = line.find_element_by_xpath("a")
     print '%s - %s' % (t.text, type(t.text))
-    if u'ilanni.com' in t.text:
+    if u'烂泥行天下' in t.text:
         print 'yes'
         t.click()
         time.sleep(10)
